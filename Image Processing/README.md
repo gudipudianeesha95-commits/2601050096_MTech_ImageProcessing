@@ -101,16 +101,16 @@ def process(image, start, end):
     process(image, mid, end)
 
     # Simple Image
-image = [
+    image = [
     [1, 2, 3, 4],
     [5, 6, 7, 8],
     [9, 10, 11, 12],
     [13, 14, 15, 16]
-]
+    ]
     # Process image
-process(image, 0, 4)
+    process(image, 0, 4)
     # Display result
-for row in image:
+    for row in image:
     print(row) 
 
 **6. Output**
