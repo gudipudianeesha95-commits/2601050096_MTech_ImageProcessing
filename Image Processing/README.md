@@ -1,5 +1,7 @@
 **Image Processing Using Divide-and-Conquer**
 
+**An image contains millions of pixels. You want to perform an operation independently on different regions of the image. Question: How can divide-and-conquer be used to solve this problem?**
+
 **1. Objective**
 
 To develop a simple Python-based image processing program using the Divide-and-Conquer technique, where an image is divided into smaller regions and an operation is performed independently on each region.
