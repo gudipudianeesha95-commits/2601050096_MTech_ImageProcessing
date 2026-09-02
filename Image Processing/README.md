@@ -46,43 +46,43 @@ Output:
 
 **4. Algorithm**
 
-Start.
+1. Start.
 
-Create a 4 × 4 image containing pixel values from 1 to 16.
+2. Create a 4 × 4 image containing pixel values from 1 to 16.
 
-Define a function process(image, start, end).
+3. Define a function process(image, start, end).
 
-Check the base case:
+4. Check the base case:
 
-If end - start <= 2, the region is small enough to process directly.
+5. If end - start <= 2, the region is small enough to process directly.
 
-Use range(start, end) to select the rows of the current region.
+6. Use range(start, end) to select the rows of the current region.
 
-For every selected row, use range(len(image[0])) to visit every pixel.
+7. For every selected row, use range(len(image[0])) to visit every pixel.
 
-Increase each pixel value by 1.
+8. Increase each pixel value by 1.
 
-If the region is larger than 2 rows, find the middle using:
+9. If the region is larger than 2 rows, find the middle using:
 
-mid = (start + end) // 2
+10. mid = (start + end) // 2
 
-Divide the image into two smaller regions:
+11. Divide the image into two smaller regions:
 
-First region: start to mid
+12. First region: start to mid
 
-Second region: mid to end
+13. Second region: mid to end
 
-Conquer by recursively processing the first region.
+14. Conquer by recursively processing the first region.
 
-Recursively process the second region.
+15. Recursively process the second region.
 
-The processed regions remain in the original image, so no separate combine operation is required.
+16. The processed regions remain in the original image, so no separate combine operation is required.
 
-Display the final image row by row.
+17. Display the final image row by row.
 
-Stop.
+18. Stop.
 
-**5. Code**
+**5. Python Implementation**
 
 def process(image, start, end):
 
