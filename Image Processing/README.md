@@ -47,25 +47,86 @@ Output:
 **4. Algorithm**
 
 Start.
+
 Create a 4 × 4 image containing pixel values from 1 to 16.
+
 Define a function process(image, start, end).
+
 Check the base case:
+
 If end - start <= 2, the region is small enough to process directly.
+
 Use range(start, end) to select the rows of the current region.
+
 For every selected row, use range(len(image[0])) to visit every pixel.
+
 Increase each pixel value by 1.
+
 If the region is larger than 2 rows, find the middle using:
+
 mid = (start + end) // 2
+
 Divide the image into two smaller regions:
+
 First region: start to mid
+
 Second region: mid to end
+
 Conquer by recursively processing the first region.
+
 Recursively process the second region.
+
 The processed regions remain in the original image, so no separate combine operation is required.
+
 Display the final image row by row.
+
 Stop.
 
-**5. Time Complexity**
+**5. Code**
+
+def process(image, start, end):
+
+    # Base Case
+    if end - start <= 2:
+        for i in range(start, end):
+            for j in range(len(image[0])):
+                image[i][j] += 1
+        return
+
+    # Divide
+    mid = (start + end) // 2
+
+    # Process two smaller regions
+    process(image, start, mid)
+    process(image, mid, end)
+
+
+# Simple Image
+image = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13, 14, 15, 16]
+]
+
+# Process image
+process(image, 0, 4)
+
+# Display result
+for row in image:
+    print(row) 
+
+**6. Output**
+
+[2, 3, 4, 5]
+
+[6, 7, 8, 9]
+
+[10, 11, 12, 13]
+
+[14, 15, 16, 17]
+
+**7. Time Complexity**
 
 Let n be the total number of pixels.
 
@@ -79,7 +140,7 @@ O(n)
 
 For our 4 × 4 example, n = 16.
 
-**6. Space Complexity**
+**8. Space Complexity**
 
 O(log n)
 
