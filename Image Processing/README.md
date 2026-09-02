@@ -100,7 +100,6 @@ def process(image, start, end):
     process(image, start, mid)
     process(image, mid, end)
 
-
     # Simple Image
 image = [
     [1, 2, 3, 4],
@@ -108,10 +107,8 @@ image = [
     [9, 10, 11, 12],
     [13, 14, 15, 16]
 ]
-
     # Process image
 process(image, 0, 4)
-
     # Display result
 for row in image:
     print(row) 
